@@ -25,10 +25,16 @@ final class ObservableCollection extends VBox {
 		String[] names = {"Anna", "Beatrice", "Charles", "Donald"};
 		observableList = FXCollections.observableArrayList(names);
 		
+		//initialize controls
 		shuffle = new Button("Shuffle");
 		toolBar = new ToolBar(shuffle);
-		
 		listView = new ListView<>(observableList);	
+		
+		//set shuffle button functionality
+		shuffle.setOnAction(event -> FXCollections.shuffle(observableList));
+		
+	
+		
 	}
 	
 	private void layoutControls() {
